@@ -159,6 +159,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC73DB8177CC8B600EF3FEB /* Build configuration list for PBXNativeTarget "HelloArrow" */;
 			buildPhases = (
+				ACC73DBE177CC8EF00EF3FEB /* ShellScript */,
 				ACC73D82177CC8B600EF3FEB /* Sources */,
 				ACC73D83177CC8B600EF3FEB /* Frameworks */,
 				ACC73D84177CC8B600EF3FEB /* Resources */,
@@ -244,6 +245,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACC73DBE177CC8EF00EF3FEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACC73D82177CC8B600EF3FEB /* Sources */ = {
