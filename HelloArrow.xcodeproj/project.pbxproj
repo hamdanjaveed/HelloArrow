@@ -23,6 +23,7 @@
 		ACC73DB5177CC8B600EF3FEB /* HelloArrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC73DB4177CC8B600EF3FEB /* HelloArrowTests.m */; };
 		ACC73DC0177CC96E00EF3FEB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */; };
 		ACC73DC2177CC97300EF3FEB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */; };
+		ACC73DC5177CC9DA00EF3FEB /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC73DC4177CC9DA00EF3FEB /* GLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		ACC73DB4177CC8B600EF3FEB /* HelloArrowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloArrowTests.m; sourceTree = "<group>"; };
 		ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ACC73DC3177CC9DA00EF3FEB /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		ACC73DC4177CC9DA00EF3FEB /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		ACC73D8F177CC8B600EF3FEB /* HelloArrow */ = {
 			isa = PBXGroup;
 			children = (
+				ACC73DC3177CC9DA00EF3FEB /* GLView.h */,
+				ACC73DC4177CC9DA00EF3FEB /* GLView.m */,
 				ACC73D98177CC8B600EF3FEB /* ArrowAppDelegate.h */,
 				ACC73D99177CC8B600EF3FEB /* ArrowAppDelegate.m */,
 				ACC73D9B177CC8B600EF3FEB /* Main.storyboard */,
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC73DA0177CC8B600EF3FEB /* ArrowViewController.m in Sources */,
+				ACC73DC5177CC9DA00EF3FEB /* GLView.m in Sources */,
 				ACC73D9A177CC8B600EF3FEB /* ArrowAppDelegate.m in Sources */,
 				ACC73D96177CC8B600EF3FEB /* main.m in Sources */,
 			);
@@ -480,6 +486,7 @@
 				ACC73DBA177CC8B600EF3FEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACC73DBB177CC8B600EF3FEB /* Build configuration list for PBXNativeTarget "HelloArrowTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				ACC73DBD177CC8B600EF3FEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
