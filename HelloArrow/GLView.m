@@ -7,15 +7,18 @@
 //
 
 #import "GLView.h"
+#import "RenderingEngineES1.h"
 #import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
 #import <QuartzCore/QuartzCore.h>
+#import <OpenGLES/ES2/gl.h>
 
 @interface GLView()
 @property (nonatomic) EAGLContext *context;
+@property (nonatomic) RenderingEngineES1 *renderingEngine;
+@property (nonatomic) float timeStamp;
 
-- (void)render;
+- (void)render:(CADisplayLink *)displayLink;
+- (void)didRotate:(NSNotification *)notification;
 @end
 
 @implementation GLView
@@ -31,6 +34,13 @@
     return _context;
 }
 
+- (RenderingEngineES1 *)renderingEngine {
+    if (!_renderingEngine) {
+        _renderingEngine = [[RenderingEngineES1 alloc] init];
+    }
+    return _renderingEngine;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -41,29 +51,45 @@
             return nil;
         }
         
-        GLuint framebuffer, renderbuffer;
-        glGenFramebuffers(1, &framebuffer);
-        glGenRenderbuffers(1, &renderbuffer);
+        [self.renderingEngine create];
         
-        glBindFramebuffer(GL_FRAMEBUFFER_OES, framebuffer);
-        glBindRenderbuffer(GL_RENDERBUFFER_OES, renderbuffer);
+        [self.context renderbufferStorage:GL_RENDERBUFFER fromDrawable:myLayer];
         
-        [self.context renderbufferStorage:GL_RENDERBUFFER_OES fromDrawable:myLayer];
+        [self.renderingEngine initializeStateWithFrame:frame];
         
-        glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, renderbuffer);
+        [self render:nil];
         
-        glViewport(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+        self.timeStamp = CACurrentMediaTime();
         
-        [self render];
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self
+                                                                 selector:@selector(render:)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop]
+                          forMode:NSDefaultRunLoopMode];
+        
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didRotate:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
     }
     return self;
 }
 
-- (void)render {
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    [self.context presentRenderbuffer:GL_RENDERBUFFER_OES];
+- (void)render:(CADisplayLink *)displayLink {
+    if (displayLink != nil) {
+        float elapsedSeconds = displayLink.timestamp - self.timeStamp;
+        self.timeStamp = displayLink.timestamp;
+        [self.renderingEngine updateAnimationWithTimeStep:elapsedSeconds];
+    }
+    [self.renderingEngine render];
+    [self.context presentRenderbuffer:GL_RENDERBUFFER];
+}
+
+- (void)didRotate:(NSNotification *)notification {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self.renderingEngine deviceDidRotateToOrientation:orientation];
+    [self render:nil];
 }
 
 - (void)dealloc {
