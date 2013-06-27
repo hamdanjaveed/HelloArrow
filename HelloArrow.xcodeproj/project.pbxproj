@@ -21,6 +21,8 @@
 		ACC73DAB177CC8B600EF3FEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73D8D177CC8B600EF3FEB /* UIKit.framework */; };
 		ACC73DB3177CC8B600EF3FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACC73DB1177CC8B600EF3FEB /* InfoPlist.strings */; };
 		ACC73DB5177CC8B600EF3FEB /* HelloArrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC73DB4177CC8B600EF3FEB /* HelloArrowTests.m */; };
+		ACC73DC0177CC96E00EF3FEB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */; };
+		ACC73DC2177CC97300EF3FEB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		ACC73DB0177CC8B600EF3FEB /* HelloArrowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloArrowTests-Info.plist"; sourceTree = "<group>"; };
 		ACC73DB2177CC8B600EF3FEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ACC73DB4177CC8B600EF3FEB /* HelloArrowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloArrowTests.m; sourceTree = "<group>"; };
+		ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC73DC2177CC97300EF3FEB /* QuartzCore.framework in Frameworks */,
+				ACC73DC0177CC96E00EF3FEB /* OpenGLES.framework in Frameworks */,
 				ACC73D8C177CC8B600EF3FEB /* CoreGraphics.framework in Frameworks */,
 				ACC73D8E177CC8B600EF3FEB /* UIKit.framework in Frameworks */,
 				ACC73D8A177CC8B600EF3FEB /* Foundation.framework in Frameworks */,
@@ -101,6 +107,8 @@
 		ACC73D88177CC8B600EF3FEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */,
+				ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */,
 				ACC73D89177CC8B600EF3FEB /* Foundation.framework */,
 				ACC73D8B177CC8B600EF3FEB /* CoreGraphics.framework */,
 				ACC73D8D177CC8B600EF3FEB /* UIKit.framework */,
