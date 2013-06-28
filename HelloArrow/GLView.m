@@ -8,14 +8,16 @@
 
 #import "GLView.h"
 #import "RenderingEngineES1.h"
+#import "RenderingEngineES2.h"
 #import <OpenGLES/EAGL.h>
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/ES2/gl.h>
 
 @interface GLView()
 @property (nonatomic) EAGLContext *context;
-@property (nonatomic) RenderingEngineES1 *renderingEngine;
+@property (nonatomic) id <RenderingEngine> renderingEngine;
 @property (nonatomic) float timeStamp;
+@property (nonatomic) bool forceES1;
 
 - (void)render:(CADisplayLink *)displayLink;
 - (void)didRotate:(NSNotification *)notification;
@@ -29,14 +31,24 @@
 
 - (EAGLContext *)context {
     if (!_context) {
-        _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+        _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        
+        if (!_context || self.forceES1) {
+            _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+        }
     }
     return _context;
 }
 
-- (RenderingEngineES1 *)renderingEngine {
+- (id)renderingEngine {
     if (!_renderingEngine) {
-        _renderingEngine = [[RenderingEngineES1 alloc] init];
+        if ([self.context API] == kEAGLRenderingAPIOpenGLES2) {
+            NSLog(@"Using OpenGL ES 2.0");
+            _renderingEngine = [[RenderingEngineES2 alloc] init];
+        } else {
+            NSLog(@"Using OpenGL ES 1.1");
+            _renderingEngine = [[RenderingEngineES1 alloc] init];
+        }
     }
     return _renderingEngine;
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC852B1E177D06BC00603F78 /* Vertex.shader in Resources */ = {isa = PBXBuildFile; fileRef = AC852B1D177D06BC00603F78 /* Vertex.shader */; };
+		AC852B20177D06FA00603F78 /* Fragment.shader in Resources */ = {isa = PBXBuildFile; fileRef = AC852B1F177D06FA00603F78 /* Fragment.shader */; };
 		ACC73D8A177CC8B600EF3FEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73D89177CC8B600EF3FEB /* Foundation.framework */; };
 		ACC73D8C177CC8B600EF3FEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73D8B177CC8B600EF3FEB /* CoreGraphics.framework */; };
 		ACC73D8E177CC8B600EF3FEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73D8D177CC8B600EF3FEB /* UIKit.framework */; };
@@ -21,10 +23,11 @@
 		ACC73DAB177CC8B600EF3FEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73D8D177CC8B600EF3FEB /* UIKit.framework */; };
 		ACC73DB3177CC8B600EF3FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACC73DB1177CC8B600EF3FEB /* InfoPlist.strings */; };
 		ACC73DB5177CC8B600EF3FEB /* HelloArrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC73DB4177CC8B600EF3FEB /* HelloArrowTests.m */; };
-		ACC73DC0177CC96E00EF3FEB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */; };
-		ACC73DC2177CC97300EF3FEB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */; };
 		ACC73DC5177CC9DA00EF3FEB /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC73DC4177CC9DA00EF3FEB /* GLView.m */; };
 		ACEAABC3177CDC2200E68C2E /* RenderingEngineES1.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEAABC2177CDC2200E68C2E /* RenderingEngineES1.m */; };
+		ACEAABCE177CFA5300E68C2E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */; };
+		ACEAABCF177CFA5900E68C2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */; };
+		ACEAABD0177CFACE00E68C2E /* RenderingEngineES2.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEAABCC177CEA9D00E68C2E /* RenderingEngineES2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC852B1D177D06BC00603F78 /* Vertex.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vertex.shader; path = HelloArrow/Vertex.shader; sourceTree = "<group>"; };
+		AC852B1F177D06FA00603F78 /* Fragment.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fragment.shader; path = HelloArrow/Fragment.shader; sourceTree = "<group>"; };
 		ACC73D86177CC8B600EF3FEB /* HelloArrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloArrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC73D89177CC8B600EF3FEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ACC73D8B177CC8B600EF3FEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,10 +65,12 @@
 		ACC73DBF177CC96E00EF3FEB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		ACC73DC1177CC97300EF3FEB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ACC73DC3177CC9DA00EF3FEB /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
-		ACC73DC4177CC9DA00EF3FEB /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		ACC73DC4177CC9DA00EF3FEB /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; wrapsLines = 0; };
 		ACEAABC1177CDC2200E68C2E /* RenderingEngineES1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingEngineES1.h; sourceTree = "<group>"; };
 		ACEAABC2177CDC2200E68C2E /* RenderingEngineES1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderingEngineES1.m; sourceTree = "<group>"; };
 		ACEAABC4177CDC8500E68C2E /* RenderingEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingEngine.h; sourceTree = "<group>"; };
+		ACEAABCB177CEA9D00E68C2E /* RenderingEngineES2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingEngineES2.h; sourceTree = "<group>"; };
+		ACEAABCC177CEA9D00E68C2E /* RenderingEngineES2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderingEngineES2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC73DC2177CC97300EF3FEB /* QuartzCore.framework in Frameworks */,
-				ACC73DC0177CC96E00EF3FEB /* OpenGLES.framework in Frameworks */,
+				ACEAABCF177CFA5900E68C2E /* QuartzCore.framework in Frameworks */,
+				ACEAABCE177CFA5300E68C2E /* OpenGLES.framework in Frameworks */,
 				ACC73D8C177CC8B600EF3FEB /* CoreGraphics.framework in Frameworks */,
 				ACC73D8E177CC8B600EF3FEB /* UIKit.framework in Frameworks */,
 				ACC73D8A177CC8B600EF3FEB /* Foundation.framework in Frameworks */,
@@ -95,6 +102,7 @@
 		ACC73D7D177CC8B600EF3FEB = {
 			isa = PBXGroup;
 			children = (
+				ACEAABC7177CE86300E68C2E /* Shaders */,
 				ACC73D8F177CC8B600EF3FEB /* HelloArrow */,
 				ACC73DAE177CC8B600EF3FEB /* HelloArrowTests */,
 				ACC73D88177CC8B600EF3FEB /* Frameworks */,
@@ -130,6 +138,8 @@
 				ACEAABC4177CDC8500E68C2E /* RenderingEngine.h */,
 				ACC73DC3177CC9DA00EF3FEB /* GLView.h */,
 				ACC73DC4177CC9DA00EF3FEB /* GLView.m */,
+				ACEAABCB177CEA9D00E68C2E /* RenderingEngineES2.h */,
+				ACEAABCC177CEA9D00E68C2E /* RenderingEngineES2.m */,
 				ACEAABC1177CDC2200E68C2E /* RenderingEngineES1.h */,
 				ACEAABC2177CDC2200E68C2E /* RenderingEngineES1.m */,
 				ACC73D98177CC8B600EF3FEB /* ArrowAppDelegate.h */,
@@ -170,6 +180,15 @@
 				ACC73DB1177CC8B600EF3FEB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACEAABC7177CE86300E68C2E /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				AC852B1D177D06BC00603F78 /* Vertex.shader */,
+				AC852B1F177D06FA00603F78 /* Fragment.shader */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +269,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC852B1E177D06BC00603F78 /* Vertex.shader in Resources */,
 				ACC73DA2177CC8B600EF3FEB /* Images.xcassets in Resources */,
 				ACC73D94177CC8B600EF3FEB /* InfoPlist.strings in Resources */,
+				AC852B20177D06FA00603F78 /* Fragment.shader in Resources */,
 				ACC73D9D177CC8B600EF3FEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEAABD0177CFACE00E68C2E /* RenderingEngineES2.m in Sources */,
 				ACC73DA0177CC8B600EF3FEB /* ArrowViewController.m in Sources */,
 				ACC73DC5177CC9DA00EF3FEB /* GLView.m in Sources */,
 				ACEAABC3177CDC2200E68C2E /* RenderingEngineES1.m in Sources */,
@@ -417,6 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloArrow/HelloArrow-Prefix.pch";
 				INFOPLIST_FILE = "HelloArrow/HelloArrow-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -430,6 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloArrow/HelloArrow-Prefix.pch";
 				INFOPLIST_FILE = "HelloArrow/HelloArrow-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
